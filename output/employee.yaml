@@ -1,0 +1,63 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "Employee Open API Specification",
+    "description" : "CRUD operations with Open API Swagger",
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "url" : "https://api.example2.com",
+    "description" : "New Server 2"
+  } ],
+  "paths" : {
+    "/employees/{empId}" : {
+      "get" : {
+        "summary" : "Returns employee by employee ID",
+        "parameters" : [ {
+          "name" : "empId",
+          "in" : "path",
+          "description" : "The Id of the employee to return",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "The specified employee Id is invalid (e.g. not a number)"
+          },
+          "404" : {
+            "description" : "An employee with the specified Id was not found"
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer"
+          },
+          "name" : {
+            "type" : "string"
+          }
+        }
+      }
+    }
+  }
+}
