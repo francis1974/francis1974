@@ -2,8 +2,8 @@
   "openapi" : "3.0.0",
   "info" : {
     "title" : "Employee Open API Specification",
-    "description" : "CRUD operations with Open API Swagger",
-    "version" : "1.0.0"
+    "description" : "CRUD operations with Open API Swagger and it a new version 1.1.0",
+    "version" : "1.1.0"
   },
   "servers" : [ {
     "url" : "https://api.example2.com",
