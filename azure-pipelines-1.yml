@@ -18,9 +18,3 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- task: InvokeRESTAPI@1
-  inputs:
-    connectionType: 'connectedServiceNameARM'
-    azureServiceConnection: 'Free Trial(18c0696d-9e7d-47ec-b2bf-1697651428aa)'
-    method: 'GET'
-    waitForCompletion: 'false'
